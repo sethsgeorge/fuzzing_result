@@ -187,10 +187,6 @@ cfiles32/recursive-simple/fibo_5-1.c
 cfiles32/recursive-simple/id_i20_o20-1.c
 cfiles32/recursive-simple/id_i25_o25-1.c
 cfiles32/recursive-with-pointer/system-with-recursion.i
-cfiles32/seq-mthreaded/pals_STARTPALS_ActiveStandby.5.ufo.BOUNDED-10.pals.c
-cfiles32/seq-mthreaded/pals_STARTPALS_Triplicated.1.ufo.UNBOUNDED.pals.c
-cfiles32/seq-mthreaded/pals_STARTPALS_Triplicated.ufo.BOUNDED-10.pals.c
-cfiles32/seq-mthreaded/pals_STARTPALS_Triplicated.ufo.UNBOUNDED.pals.c
 cfiles32/seq-mthreaded/pals_lcr-var-start-time.5.2.ufo.BOUNDED-10.pals.c
 cfiles32/seq-mthreaded/pals_lcr-var-start-time.5.2.ufo.UNBOUNDED.pals.c
 cfiles32/seq-mthreaded/pals_lcr-var-start-time.5.ufo.BOUNDED-10.pals.c
@@ -251,3 +247,7 @@ cfiles32/xcsp/aim-100-2-0-unsat-1.c
 cfiles32/xcsp/aim-100-2-0-unsat-3.c
 cfiles32/xcsp/aim-100-3-4-sat-4.c
 cfiles32/xcsp/aim-200-1-6-sat-3.c
+cfiles32/seq-mthreaded/pals_STARTPALS_ActiveStandby.5.ufo.BOUNDED-10.pals.c
+cfiles32/seq-mthreaded/pals_STARTPALS_Triplicated.1.ufo.UNBOUNDED.pals.c
+cfiles32/seq-mthreaded/pals_STARTPALS_Triplicated.ufo.BOUNDED-10.pals.c
+cfiles32/seq-mthreaded/pals_STARTPALS_Triplicated.ufo.UNBOUNDED.pals.c
