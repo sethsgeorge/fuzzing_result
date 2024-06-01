@@ -1,8 +1,8 @@
 import numpy as np
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.multiclass import OneVsRestClassifier
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import hamming_loss, accuracy_score, f1_score, jaccard_score, log_loss, make_scorer
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import hamming_loss, accuracy_score, f1_score, jaccard_score, make_scorer
 import pandas as pd
 
 # Define macro-averaged accuracy scorer
@@ -22,19 +22,19 @@ y = df.iloc[:, -19:].values
 # Split dataset
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=42)
 
-# Define parameter grid
-k_range = list(range(1, 30))
-metrics = ['euclidean', 'manhattan', 'minkowski']
+# Define parameter grid for Random Forest
+n_estimators = list(range(20, 151))
+criterion = ['gini', 'entropy', 'log_loss']
 param_grid = {
-    'estimator__n_neighbors': k_range,
-    'estimator__metric': metrics
+    'estimator__n_estimators': n_estimators,
+    'estimator__criterion': criterion
 }
 
-# Create KNN model wrapped in OneVsRestClassifier
-classifier = OneVsRestClassifier(KNeighborsClassifier(), n_jobs=-1)
+# Create Random Forest model wrapped in OneVsRestClassifier
+classifier = OneVsRestClassifier(RandomForestClassifier(), n_jobs=-1)
 
 # Perform grid search with custom scoring
-grid = GridSearchCV(classifier, param_grid, cv=10, scoring=macro_accuracy_scorer)
+grid = GridSearchCV(classifier, param_grid, cv=10, scoring=macro_accuracy_scorer, refit=True)
 grid.fit(X_train, y_train)
 
 # Convert cv_results_ to a DataFrame
