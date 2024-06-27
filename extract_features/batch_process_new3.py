@@ -8,70 +8,52 @@ import string
 
 
 root_directory = r'/mnt/e/OneDrive/Desktop/result/extract_features/cfiles32'
-output_file = 'output_feature.csv'  # Change the output file extension to .csv
+output_file = 'output_feature.csv' 
 
-# def remove_lines(file_path):
-#     with open(file_path, 'r') as file:
-#         content = file.read()
+       
 
-#     content = re.sub(r'^\s*#.*', '', content, flags=re.MULTILINE)
-
-#     with open(file_path, 'w') as file:
-#         file.write(content)
-
-
-def adjust_typedefs(file_path):
-    with open(file_path, 'r') as file:
+def remove_fragments(file_path):
+    with open(file_path, "r") as file:
         content = file.read()
 
-    # Remove single-line comments
-    content = re.sub(r'__signed__', 'signed', content)
-    content = re.sub(r'__inline__', '', content)
+    # List of pattern-replacement pairs
+    substitutions = [
+        (re.compile(r"__inline__|__inline|\* __restrict|\*__restrict|extern"), ""),
+        (re.compile(r"__signed__"), "signed"),
+        (re.compile(r"__builtin_va_list"), "char * "),
+        (re.compile(r"__const"), "const"),
+        (re.compile(r"reach_error"), "reach_error1"),
+    ]
 
-    content = re.sub(r'__inline', '', content)
-    
-    content = re.sub(r'__builtin_va_list', 'char * ', content)
-    content = re.sub(r'\* __restrict', '', content)
-    content = re.sub(r'\*__restrict', '', content)
+    # Apply all substitutions
+    for pattern, replacement in substitutions:
+        content = pattern.sub(replacement, content)
 
-    content = re.sub(r'extern', '', content)
-    content = re.sub(r'__const', 'const', content)
-    content = re.sub(r'reach_error', 'reach_error1', content)
+    pattern = r"\bextern\b[^;]*;|.*void\s+reach_error\(\).*\n"
+    content = re.sub(pattern, "", content, flags=re.MULTILINE)
+    pattern = r".*void\s+reach_error\(\).*\n"
 
-
-
-
-
-    # Write the modified content back to the file
-    with open(file_path, 'w') as file:
+    with open(file_path, "w") as file:
         file.write(content)
-        
          
 
 def removeComments(file_path):
-    with open(file_path, 'r') as file:
+    with open(file_path, "r") as file:
         content = file.read()
 
-    # Remove single-line comments
-    content = re.sub(r'\/\/.*', '', content)
+    substitutions = [
+        (re.compile(r"\/\/.*"), ""),
+        (re.compile(r"\/\*[\s\S]*?\*\/"), ""),
+    ]
 
-    # Remove multi-line comments
-    content = re.sub(r'\/\*[\s\S]*?\*\/', '', content)
+    # Apply all substitutions
+    for pattern, replacement in substitutions:
+        content = pattern.sub(replacement, content)
 
     # Write the modified content back to the file
-    with open(file_path, 'w') as file:
+    with open(file_path, "w") as file:
         file.write(content)
 
-# def remove_attribute_macros(file_path):
-#     with open(file_path, 'r') as file:
-#         content = file.read()
-
-#     # Remove __attribute__ macros with any arguments
-#     content = re.sub(r'__attribute__\s*\(\s*\(.*?\)\s*\)', '', content)
-
-#     # Write the modified content back to the file
-#     with open(file_path, 'w') as file:
-#         file.write(content)
 
 
 def extract_code(data):
@@ -284,35 +266,30 @@ def preprocess_c_file(input_file_path):
             # Preprocess only if it's a .c file
             #preprocess_command = f"gcc -E -D'__attribute__(x)=' {input_file_path} -o {output_preprocessed_file_path}"
             preprocess_command = f"gcc -E -D'__attribute__(x)=' -D'__extension=' {input_file_path} -o {output_preprocessed_file_path}"
-
             subprocess.run(preprocess_command, shell=True, check=True)
-            adjust_typedefs(output_preprocessed_file_path)
 
+            remove_fragments(output_preprocessed_file_path)
             remove_attribute_macros(output_preprocessed_file_path)
             remove_extension_macros_with_paren(output_preprocessed_file_path)
             remove_extension_macros(output_preprocessed_file_path)
             #print("output path: ", output_preprocessed_file_path)
-            
-            
+            #             
             return output_preprocessed_file_path
         
         elif file_extension == '.i':
             # If it's a .i file, simply copy it to the output directory
-            output_preprocessed_file_path = os.path.join(output_preprocessed_dir, os.path.basename(input_file_path))
+            #output_preprocessed_file_path = os.path.join(output_preprocessed_dir, os.path.basename(input_file_path))
+            output_preprocessed_file_path = os.path.join(output_preprocessed_dir, base_file_name + "_preprocessed.i")
             shutil.copy(input_file_path, output_preprocessed_file_path)
-            remove_http(output_preprocessed_file_path)
 
+            remove_http(output_preprocessed_file_path)
             removeComments(output_preprocessed_file_path)
             remove_attribute_macros(output_preprocessed_file_path)
             remove_extension_macros_with_paren(output_preprocessed_file_path)
             remove_extension_macros(output_preprocessed_file_path)
             remove_asm_volatile(output_preprocessed_file_path)
             remove_asm(output_preprocessed_file_path)
-
-            
-
-
-            adjust_typedefs(output_preprocessed_file_path)
+            remove_fragments(output_preprocessed_file_path)
 
             return output_preprocessed_file_path
         

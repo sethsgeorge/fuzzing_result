@@ -1,0 +1,7 @@
+program_name,config,line_coverage,line_covered,total_lines,function_coverage,function_covered,total_functions,branch_coverage,error_cover,time_difference,num_queue_files,num_crash_files
+/home/administrator/Desktop/exp20/seth/cfiles32/floats-cdfpl/sine_3.i,c1,83.3,10,12,66.7,2,3,80.0%,TRUE,0.3400001525878906,2,1
+/home/administrator/Desktop/exp20/seth/cfiles32/array-examples/standard_copy5_ground-2.i,c1,0,0,0,0,0,0,5.88%,UNKNOWN,-1,1,-1
+/home/administrator/Desktop/exp20/seth/cfiles32/reducercommutativity/rangesum10.i,c1,0,0,0,0,0,0,84.62%,TRUE,-1,1,-1
+/home/administrator/Desktop/exp20/seth/cfiles32/reducercommutativity/rangesum40.i,c1,0,0,0,0,0,0,84.62%,TRUE,-1,1,-1
+/home/administrator/Desktop/exp20/seth/cfiles32/loop-invgen/id_trans.i,c1,73.7,14,19,50.0,2,4,77.78%,TRUE,3.0279998779296875,14,3
+/home/administrator/Desktop/exp20/seth/cfiles32/verifythis/tree_max_incorrect.c,c1,46.9,15,32,71.4,5,7,25.0%,UNKNOWN,-1,1,-1

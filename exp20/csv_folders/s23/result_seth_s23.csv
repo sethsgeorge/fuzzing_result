@@ -1,0 +1,7 @@
+program_name,config,line_coverage,line_covered,total_lines,function_coverage,function_covered,total_functions,branch_coverage,error_cover,time_difference,num_queue_files,num_crash_files
+/home/administrator/Desktop/exp20/seth/cfiles32/loop-acceleration/array_3-2.i,c1,0,0,0,0,0,0,85.71%,TRUE,-1,1,-1
+/home/administrator/Desktop/exp20/seth/cfiles32/loops-crafted-1/nested_delay_notd2.c,c1,0,0,0,0,0,0,68.75%,TRUE,-1,1,-1
+/home/administrator/Desktop/exp20/seth/cfiles32/loops/trex01-1.c,c1,0,0,0,0,0,0,58.33%,UNKNOWN,-1,1,-1
+/home/administrator/Desktop/exp20/seth/cfiles32/ldv-regression/test21-2.c,c1,0,0,0,0,0,0,50.0%,TRUE,-1,1,-1
+/home/administrator/Desktop/exp20/seth/cfiles32/bitvector-regression/recHanoi03-1.c,c1,0,0,0,0,0,0,0,UNKNOWN,-1,1,-1
+/home/administrator/Desktop/exp20/seth/cfiles32/recursive-simple/id2_b3_o2.c,c1,0,0,0,0,0,0,0,UNKNOWN,-1,1,-1

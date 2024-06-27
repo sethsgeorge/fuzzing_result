@@ -1,0 +1,6 @@
+program_name,config,line_coverage,line_covered,total_lines,function_coverage,function_covered,total_functions,branch_coverage,error_cover,time_difference,num_queue_files,num_crash_files
+/home/administrator/Desktop/exp20/seth/cfiles32/array-examples/standard_copy3_ground-2.i,c1,0,0,0,0,0,0,7.69%,UNKNOWN,-1,1,-1
+/home/administrator/Desktop/exp20/seth/cfiles32/ldv-regression/test22-3.c,c1,89.7,26,29,83.3,5,6,90.0%,UNKNOWN,0.23199987411499023,6,1
+/home/administrator/Desktop/exp20/seth/cfiles32/nla-digbench-scaling/mannadiv_unwindbound20.c,c1,0,0,0,0,0,0,70.0%,TRUE,-1,1,-1
+/home/administrator/Desktop/exp20/seth/cfiles32/nla-digbench-scaling/mannadiv_unwindbound1.c,c1,0,0,0,0,0,0,70.0%,TRUE,-1,1,-1
+/home/administrator/Desktop/exp20/seth/cfiles32/array-fpi/indp3f.c,c1,14.3,3,21,25.0,1,4,87.5%,TRUE,0.23199987411499023,2,25

@@ -1,0 +1,5 @@
+program_name,config,line_coverage,line_covered,total_lines,function_coverage,function_covered,total_functions,branch_coverage,error_cover,time_difference,num_queue_files,num_crash_files
+/home/administrator/Desktop/exp20/seth/cfiles32/eca-rers2012/Problem19_label14.c,c10,57.9,4639,8016,87.5,7,8,49.51%,TRUE,202.9839928150177,841,2
+/home/administrator/Desktop/exp20/seth/cfiles32/xcsp/aim-200-6-0-sat-3.c,c1,0,0,0,0,0,0,100.0%,UNKNOWN,-1,571,-1
+/home/administrator/Desktop/exp20/seth/cfiles32/product-lines/email_spec1_product30.cil.c,c1,41.6,500,1201,62.8,71,113,30.28%,TRUE,0.2200000286102295,439,133
+/home/administrator/Desktop/exp20/seth/cfiles32/product-lines/email_spec3_product13.cil.c,c1,34.5,400,1160,52.3,56,107,24.19%,TRUE,0.20799994468688965,250,204
