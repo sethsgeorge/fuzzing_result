@@ -1,0 +1,10 @@
+Label counts in training data: Counter({0: 2766, 1: 521})
+
+Label cardinality:
+   c19  c10  c11  c12  c13  c14  c15  c16  c17  c18   c1   c2   c3   c4   c5   c6   c7   c8   c9
+0  148  143  149  149  140  145  147  149  146  148  145  147  148  142  150  145  141  146  138
+1   25   30   24   24   33   28   26   24   27   25   28   26   25   31   23   28   32   27   35
+
+mean of 0: 145.58
+mean of 1: 27.42
+number of 1s to be added : 145.58-27.42 = 118

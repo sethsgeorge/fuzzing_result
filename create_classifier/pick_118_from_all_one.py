@@ -11,11 +11,11 @@ def sample_csv(input_file, output_file, sample_size, random_state=42):
     random_sample_df.to_csv(output_file, index=False)
 
 # Specify the file paths
-input_file = 'dataset_with_all_one.csv'
-output_file = '88_rows_from_all_one.csv'
-sample_size = 88
+input_file = 'labelled_dataset_with_all_one.csv'
+output_file = '118_rows_from_all_one.csv'
+sample_size = 118
 
 # Sample 41 random rows and save to new CSV file
 sample_csv(input_file, output_file, sample_size)
 
-print(f"Random sample of 88 rows has been saved to {output_file}")
+print(f"Random sample of 118 rows has been saved to {output_file}")
