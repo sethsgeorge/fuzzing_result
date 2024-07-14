@@ -17,10 +17,25 @@ def copy_csv_files(source_folder, destination_folder):
                 print(f"File '{file}' copied successfully.")
 
 # Example usage
-source_folder = '/mnt/e/OneDrive/Desktop/result/repeats/e2/r3/csv_folders'
-destination_folder = '/mnt/e/OneDrive/Desktop/result/repeats/e2/r3/csv_files'
+destination_folder = '/mnt/e/OneDrive/Desktop/result/repeats/all_csv_files'
 
 if not os.path.exists(destination_folder):
     os.makedirs(destination_folder)
 
+source_folder = '/mnt/e/OneDrive/Desktop/result/repeats/e1/r1/csv_files'
+copy_csv_files(source_folder, destination_folder)
+
+source_folder = '/mnt/e/OneDrive/Desktop/result/repeats/e1/r2/csv_files'
+copy_csv_files(source_folder, destination_folder)
+
+source_folder = '/mnt/e/OneDrive/Desktop/result/repeats/e1/r3/csv_files'
+copy_csv_files(source_folder, destination_folder)
+
+source_folder = '/mnt/e/OneDrive/Desktop/result/repeats/e2/r1/csv_files'
+copy_csv_files(source_folder, destination_folder)
+
+source_folder = '/mnt/e/OneDrive/Desktop/result/repeats/e2/r2/csv_files'
+copy_csv_files(source_folder, destination_folder)
+
+source_folder = '/mnt/e/OneDrive/Desktop/result/repeats/e2/r3/csv_files'
 copy_csv_files(source_folder, destination_folder)

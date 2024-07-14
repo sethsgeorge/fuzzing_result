@@ -1,0 +1,20 @@
+append_repeat_to_csv_filename.py	op: e1/r1/csv_files/, e1/r2/csv_files/, ...
+copy_csv_files.py	op: all_csv_files/
+remove_seed_crash.py	op: all_csv_files_seed_crash_removed/
+truncate_program_name.py	op: all_csv_files_seed_crash_removed/
+get_common_program_name.py	op: common_program_name_e1.csv/common_program_name_e2.csv
+remove_non_common_program.py	op: fuzzed_across_all_crash_removed
+calculate_average.py	op: average/
+combine_e1_e2.py   op: combined_csv/
+combine_columns_csv.py	op: branch_coverage_columns_combined.csv
+label_dataset.py	op: labelled_dataset.csv
+manually copy dataset_original.csv from ../total/ as program_name2.csv
+manually copy labelled_dataset_with_zero.csv as program_name1.csv
+not_fuzzed_three_times.py	op: not_fuzzed_3_times.csv
+get_non_fuzzed_three_times_data.y	op: merged_data.csv
+manually copy merged_data.csv to labelled_dataset.csv
+remove ntdrivers/diskperf.i.cil-1.c, product-lines/elevator_spec1_product01.cil.c, product-lines/email_spec0_product05.cil.c , product-lines/email_spec11_product07.cil.c from labelled_dataset.csv because the features cannot be extracted
+perform feature extraction on labelled_dataset.sv
+create_dataset_with_feature.py	op: create_dataset_with_feature.csv
+at_least_one_zero.py	op: labelled_dataset_with_zero.csv
+rows_with_all_one.py	op: labelled_dataset_with_all_one.csv
