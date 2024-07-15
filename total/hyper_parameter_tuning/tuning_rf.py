@@ -1,9 +1,10 @@
 import numpy as np
+import pandas as pd
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import hamming_loss, accuracy_score, f1_score, jaccard_score, make_scorer
-import pandas as pd
+import pickle
 
 # Define macro-averaged accuracy scorer
 def macro_accuracy(y_true, y_pred):
@@ -39,8 +40,6 @@ grid.fit(X_train, y_train)
 
 # Convert cv_results_ to a DataFrame
 results_df = pd.DataFrame(grid.cv_results_)
-
-# Display the first few rows of the DataFrame
 print(results_df.head())
 
 # Optionally, save the results to a CSV file
@@ -59,3 +58,16 @@ print("Hamming Loss: ", hamming_loss(y_test, y_pred))
 print("Accuracy: ", accuracy_score(y_test, y_pred))
 print("F1 Score: ", f1_score(y_test, y_pred, average='weighted'))
 print("Jaccard Score: ", jaccard_score(y_test, y_pred, average='samples'))
+
+# Save the best model as a pickle file
+with open('best_model.pkl', 'wb') as file:
+    pickle.dump(best_model, file)
+
+# Load the model from the pickle file (for future use)
+# with open('best_model.pkl', 'rb') as file:
+#     loaded_model = pickle.load(file)
+
+# Example usage of the loaded model
+y_loaded_pred = loaded_model.predict(X_test)
+print("Loaded model Hamming Loss: ", hamming_loss(y_test, y_loaded_pred))
+print("Loaded model Accuracy: ", accuracy_score(y_test, y_loaded_pred))

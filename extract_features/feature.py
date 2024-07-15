@@ -1,5 +1,9 @@
 from pycparser import c_parser, c_ast
 import re
+import os
+import subprocess
+import xml.etree.ElementTree as ET
+
 
 isRecursive = False
 
@@ -17,28 +21,15 @@ class ConstraintCountingVisitor(c_ast.NodeVisitor):
         self.call_graph = {}
         self.max_depth_call = 0
 
-
     def visit_FuncCall(self, node):
-        if isinstance(node.name, c_ast.ID):
-            func_name = node.name.name
-            if self.current_function not in self.call_graph:
-                self.call_graph[self.current_function] = []
-            if func_name == self.current_function:
-                global isRecursive
-                isRecursive = True
-            self.call_graph[self.current_function].append(func_name)
+        func_name = node.name.name
+        if self.current_function not in self.call_graph:
+            self.call_graph[self.current_function] = []
+        if func_name == self.current_function:
+            global isRecursive
+            isRecursive = True
+        self.call_graph[self.current_function].append(func_name)
         self.generic_visit(node)
-
-
-    # def visit_FuncCall(self, node):
-    #     func_name = node.name.name
-    #     if self.current_function not in self.call_graph:
-    #         self.call_graph[self.current_function] = []
-    #     if func_name == self.current_function:
-    #         global isRecursive
-    #         isRecursive = True
-    #     self.call_graph[self.current_function].append(func_name)
-    #     self.generic_visit(node)
 
     def visit_FuncDef(self, node):
         self.current_function = node.decl.name
@@ -99,16 +90,40 @@ class ConstraintCountingVisitor(c_ast.NodeVisitor):
         self.nested_depth -= 1
 
 
-def process_code_new(code):
-    pattern = r"\bextern\b[^;]*;"
-    code = re.sub(pattern, "", code, flags=re.MULTILINE)
-    pattern = r".*void\s+reach_error\(\).*\n"
-    code = re.sub(pattern, "", code, flags=re.MULTILINE)
-    code = re.sub(r"^\s*#.*", "", code, flags=re.MULTILINE)
-    return code
+def extractFromLizard():
+    home_dir = os.path.expanduser("~")  # Get the user's home directory
+    lizard_xml = os.path.join(home_dir, "temp", "lizardOutput.xml")
+
+    # Load and parse the XML file
+    tree = ET.parse(lizard_xml)
+    root = tree.getroot()
+
+    # Initialize variables
+    ncss_sum = None
+    ccn_sum = None
+    functions_sum = None
+
+    # Iterate over all 'sum' elements and extract values
+    for sum_element in root.findall(".//sum"):
+        label = sum_element.get('label')
+        value = sum_element.get('value')
+        
+        if label == "NCSS":
+            ncss_sum = int(value)
+        elif label == "CCN":
+            ccn_sum = int(value)
+        elif label == "Functions":
+            functions_sum = int(value)
+    return ncss_sum, ccn_sum, functions_sum
+    # Print the extracted values
+    # print(f"NCSS Sum: {ncss_sum}")
+    # print(f"CCN Sum: {ccn_sum}")
+    # print(f"Functions Sum: {functions_sum}")
+
 
 
 def calculate_num_lines(code):
+    #print("loc: ", len(code.split("\n")))
     return len(code.split("\n"))
 
 
@@ -151,50 +166,58 @@ def find_longest_path(node, current_path_length=0):
         return current_path_length
 
 
-class CyclomaticVisitor(c_ast.NodeVisitor):
-    def __init__(self):
-        self.complexity = 1
+# class CyclomaticVisitor(c_ast.NodeVisitor):
+#     def __init__(self):
+#         self.complexity = 1
 
-    def visit(self, node):
-        self.generic_visit(node)
-        if isinstance(
-            node, (c_ast.If, c_ast.For, c_ast.While, c_ast.DoWhile, c_ast.Case)
-        ):
-            self.complexity += 1
+#     def visit(self, node):
+#         self.generic_visit(node)
+#         if isinstance(
+#             node, (c_ast.If, c_ast.For, c_ast.While, c_ast.DoWhile, c_ast.Case)
+#         ):
+#             self.complexity += 1
 
 
 # if __name__ == '__main__':
 def process_c_file(file_path):
+    global isRecursive
+    # print("insode process_c_file")
+    home_dir = os.path.expanduser("~")  # Get the user's home directory
+    lizard_xml = os.path.join(home_dir, "temp", "lizardOutput.xml")
+    # print(os.getcwd())
+    lizard_cmd = f"bin/lizard {file_path} -o {lizard_xml}" 
+    subprocess.run(lizard_cmd, shell=True, check=True)
+
     with open(file_path, "r") as f:
         c_code = f.read()
-    #print("inside feature extractor: ", file_path)
-    processed_code = process_code_new(c_code)
-    #processed_code = c_code
+    # processed_code = process_code_new(c_code)
     # print(processed_code)
     parser = c_parser.CParser()
-    try:
-        ast = parser.parse(processed_code, filename="<none>")
-    except Exception as e:
-        print(f"Error in generating ast: {file_path}: {e}")
-        return "None"
-
-    print("ast generated for :", file_path)
+    ast = parser.parse(c_code, filename="<none>")
     # print(ast)
     # ast.show()
-    num_lines = calculate_num_lines(processed_code)
-    num_functions = calculate_num_functions(ast)
+
+
+
+    num_lines, num_functions, complexity = extractFromLizard()
+    #num_lines = calculate_num_lines(c_code)
+    #num_functions = calculate_num_functions(ast)
     total_edges = count_edges(ast)
     longest_path = find_longest_path(ast)
-    visitor = CyclomaticVisitor()
-    visitor.visit(ast)
-    complexity = visitor.complexity
+
+    # visitor = CyclomaticVisitor()
+    # visitor.visit(ast)
+    # complexity = visitor.complexity
 
     call_graph_generator = ConstraintCountingVisitor()
     call_graph = call_graph_generator.generate_call_graph(ast)
     max_depth_call = call_graph_generator.max_depth_call
 
+
+
     if isRecursive == True:
         max_depth_call = 5000
+        isRecursive = False
 
     visitor1 = ConstraintCountingVisitor()
     visitor1.visit(ast)
