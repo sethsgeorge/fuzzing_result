@@ -26,7 +26,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random
 # Define parameter grid for KNN
 param_grid = {
     'estimator__n_neighbors': list(range(1, 31)),
-    'estimator__weights': ['uniform', 'distance'],
+    #'estimator__weights': ['uniform', 'distance'],
     'estimator__metric': ['euclidean', 'manhattan', 'minkowski']
 }
 

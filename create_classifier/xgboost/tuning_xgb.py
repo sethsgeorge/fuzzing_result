@@ -23,15 +23,27 @@ y = df.iloc[:, -19:].values
 # Split dataset
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=42)
 
+
 # Define parameter grid for XGBoost
+n_estimators = list(range(20, 151))
+criterion = ['gini', 'entropy', 'log_loss']
 param_grid = {
-    'estimator__learning_rate': [0.01, 0.1, 0.2],
-    'estimator__max_depth': [3, 5, 7],
-    'estimator__n_estimators': [50, 100, 150]
+    'estimator__n_estimators': n_estimators,
+    'estimator__criterion': criterion
 }
+# param_grid = {
+#     'estimator__learning_rate': [0.01, 0.1, 0.2],
+#     'estimator__max_depth': [3, 5, 7],
+#     'estimator__n_estimators': [50, 100, 150]
+# }
+# param_grid = {
+#     'estimator__learning_rate': [0.01, 0.1],
+#     'estimator__max_depth': [5, 7],
+#     'estimator__n_estimators': [50, 100]
+# }
 
 # Create XGBoost model wrapped in OneVsRestClassifier
-classifier = OneVsRestClassifier(XGBClassifier(use_label_encoder=False, eval_metric='mlogloss'), n_jobs=-1)
+classifier = OneVsRestClassifier(XGBClassifier(eval_metric='mlogloss'), n_jobs=-1)
 
 # Perform grid search with custom scoring
 grid = GridSearchCV(classifier, param_grid, cv=10, scoring=macro_accuracy_scorer, refit=True)
