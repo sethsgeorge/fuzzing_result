@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.multiclass import OneVsRestClassifier
 from xgboost import XGBClassifier
 from sklearn.metrics import hamming_loss, accuracy_score, f1_score, jaccard_score, make_scorer
-import pickle
+import joblib
 
 # Define macro-averaged accuracy scorer
 def macro_accuracy(y_true, y_pred):
@@ -29,7 +29,7 @@ n_estimators = list(range(20, 151))
 criterion = ['gini', 'entropy', 'log_loss']
 param_grid = {
     'estimator__n_estimators': n_estimators,
-    'estimator__criterion': criterion
+    #'estimator__criterion': criterion
 }
 # param_grid = {
 #     'estimator__learning_rate': [0.01, 0.1, 0.2],
@@ -70,13 +70,13 @@ print("Accuracy: ", accuracy_score(y_test, y_pred))
 print("F1 Score: ", f1_score(y_test, y_pred, average='weighted'))
 print("Jaccard Score: ", jaccard_score(y_test, y_pred, average='samples'))
 
-# Save the best model as a pickle file
-with open('xgboost_best_model.pkl', 'wb') as file:
-    pickle.dump(best_model, file)
+# Save the best model as a joblib file
+with open('xgboost_best_model.joblib', 'wb') as file:
+    joblib.dump(best_model, file)
 
-# Load the model from the pickle file (for future use)
-with open('xgboost_best_model.pkl', 'rb') as file:
-    loaded_model = pickle.load(file)
+# Load the model from the joblib file (for future use)
+with open('xgboost_best_model.joblib', 'rb') as file:
+    loaded_model = joblib.load(file)
 
 # Example usage of the loaded model
 y_loaded_pred = loaded_model.predict(X_test)
