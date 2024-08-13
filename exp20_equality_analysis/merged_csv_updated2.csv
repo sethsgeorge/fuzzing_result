@@ -1,0 +1,17 @@
+program_name,configuration,branch_coverage,error_cover
+eca-rers2012/Problem02_label21.c,cmp,30.32,UNKNOWN
+eca-rers2012/Problem02_label21.c,nil,30.32,UNKNOWN
+eca-rers2012/Problem02_label21.c,laf,30.32,UNKNOWN
+eca-rers2012/Problem02_label21.c,cmp_laf,30.32,UNKNOWN
+eca-rers2012/Problem02_label22.c,cmp,30.32,UNKNOWN
+eca-rers2012/Problem02_label22.c,nil,30.32,UNKNOWN
+eca-rers2012/Problem02_label22.c,laf,30.32,UNKNOWN
+eca-rers2012/Problem02_label22.c,cmp_laf,30.32,UNKNOWN
+eca-rers2012/Problem02_label45.c,cmp,30.32,TRUE
+eca-rers2012/Problem02_label45.c,nil,30.32,TRUE
+eca-rers2012/Problem02_label45.c,laf,30.32,TRUE
+eca-rers2012/Problem02_label45.c,cmp_laf,30.32,TRUE
+eca-rers2012/Problem02_label47.c,cmp,30.32,UNKNOWN
+eca-rers2012/Problem02_label47.c,nil,30.32,UNKNOWN
+eca-rers2012/Problem02_label47.c,laf,30.32,UNKNOWN
+eca-rers2012/Problem02_label47.c,cmp_laf,30.32,UNKNOWN

@@ -1,0 +1,13 @@
+program_name,config,line_coverage,line_covered,total_lines,function_coverage,function_covered,total_functions,branch_coverage,error_cover,time_difference,num_queue_files,num_crash_files
+/home/administrator/Desktop/exp20_equality/cfiles32/combinations/pals_lcr.7.ufo.BOUNDED-14.pals+Problem12_label01.c,c17,92.2,3934,4269,31.6,6,19,79.23%,UNKNOWN,-1,1672,-1
+/home/administrator/Desktop/exp20_equality/cfiles32/combinations/pals_lcr.7.ufo.BOUNDED-14.pals+Problem12_label01.c,c18,92.2,3934,4269,31.6,6,19,79.23%,UNKNOWN,-1,1591,-1
+/home/administrator/Desktop/exp20_equality/cfiles32/combinations/pals_lcr.7.ufo.BOUNDED-14.pals+Problem12_label01.c,c67,92.2,3934,4269,31.6,6,19,79.23%,UNKNOWN,-1,1707,-1
+/home/administrator/Desktop/exp20_equality/cfiles32/combinations/pals_lcr.7.ufo.BOUNDED-14.pals+Problem12_label01.c,c68,92.2,3934,4269,31.6,6,19,79.33%,UNKNOWN,-1,1649,-1
+/home/administrator/Desktop/exp20_equality/cfiles32/combinations/pals_lcr.7.ufo.BOUNDED-14.pals+Problem12_label02.c,c17,92.2,3934,4269,31.6,6,19,79.33%,UNKNOWN,-1,1468,-1
+/home/administrator/Desktop/exp20_equality/cfiles32/combinations/pals_lcr.7.ufo.BOUNDED-14.pals+Problem12_label02.c,c18,92.2,3934,4269,31.6,6,19,79.33%,UNKNOWN,-1,1538,-1
+/home/administrator/Desktop/exp20_equality/cfiles32/combinations/pals_lcr.7.ufo.BOUNDED-14.pals+Problem12_label02.c,c67,92.2,3934,4269,31.6,6,19,79.23%,UNKNOWN,-1,1675,-1
+/home/administrator/Desktop/exp20_equality/cfiles32/combinations/pals_lcr.7.ufo.BOUNDED-14.pals+Problem12_label02.c,c68,92.2,3934,4269,31.6,6,19,79.23%,UNKNOWN,-1,1706,-1
+/home/administrator/Desktop/exp20_equality/cfiles32/combinations/pals_lcr.7.ufo.BOUNDED-14.pals+Problem12_label03.c,c17,92.1,3933,4269,31.6,6,19,79.23%,TRUE,34.41200065612793,1552,1
+/home/administrator/Desktop/exp20_equality/cfiles32/combinations/pals_lcr.7.ufo.BOUNDED-14.pals+Problem12_label03.c,c18,92.1,3933,4269,31.6,6,19,79.23%,TRUE,24.528000354766846,1537,1
+/home/administrator/Desktop/exp20_equality/cfiles32/combinations/pals_lcr.7.ufo.BOUNDED-14.pals+Problem12_label03.c,c67,92.1,3933,4269,31.6,6,19,79.23%,TRUE,90.12000131607056,1616,2
+/home/administrator/Desktop/exp20_equality/cfiles32/combinations/pals_lcr.7.ufo.BOUNDED-14.pals+Problem12_label03.c,c68,92.1,3933,4269,31.6,6,19,79.23%,TRUE,108.45600152015686,1641,2

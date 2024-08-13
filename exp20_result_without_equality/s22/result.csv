@@ -1,0 +1,11 @@
+program_name,config,line_coverage,line_covered,total_lines,function_coverage,function_covered,total_functions,branch_coverage,error_cover,time_difference,num_queue_files,num_crash_files
+/home/administrator/Desktop/exp20_without_equality/cfiles32/combinations/square_1+soft_float_4-2a.c.cil.c,c2,67.4,97,144,77.8,7,9,66.04%,TRUE,0.9079999923706055,227,1
+/home/administrator/Desktop/exp20_without_equality/cfiles32/combinations/square_1+soft_float_4-2a.c.cil.c,c51,67.4,97,144,77.8,7,9,66.04%,TRUE,30.952000617980957,256,5
+/home/administrator/Desktop/exp20_without_equality/cfiles32/combinations/square_2+soft_float_2a.c.cil.c,c2,72.3,107,148,77.8,7,9,66.67%,UNKNOWN,388.7160098552704,247,1
+/home/administrator/Desktop/exp20_without_equality/cfiles32/combinations/square_2+soft_float_2a.c.cil.c,c51,72.3,107,148,77.8,7,9,70.18%,TRUE,33.07200074195862,244,5
+/home/administrator/Desktop/exp20_without_equality/cfiles32/combinations/square_2+soft_float_4-2a.c.cil.c,c2,67.4,97,144,77.8,7,9,66.04%,TRUE,1.5279998779296875,221,1
+/home/administrator/Desktop/exp20_without_equality/cfiles32/combinations/square_2+soft_float_4-2a.c.cil.c,c51,67.4,97,144,77.8,7,9,64.15%,TRUE,11.604000329971313,249,5
+/home/administrator/Desktop/exp20_without_equality/cfiles32/float-benchs/sin_interpolated_bigrange_loose.c,c2,96.3,26,27,87.5,7,8,90.0%,UNKNOWN,-1,7,-1
+/home/administrator/Desktop/exp20_without_equality/cfiles32/float-benchs/sin_interpolated_bigrange_loose.c,c51,96.3,26,27,87.5,7,8,90.0%,UNKNOWN,-1,47,-1
+/home/administrator/Desktop/exp20_without_equality/cfiles32/float-newlib/double_req_bl_0660b.c,c2,19.0,24,126,40.0,2,5,12.68%,UNKNOWN,-1,2,-1
+/home/administrator/Desktop/exp20_without_equality/cfiles32/float-newlib/double_req_bl_0660b.c,c51,19.0,24,126,40.0,2,5,12.68%,UNKNOWN,-1,12,-1

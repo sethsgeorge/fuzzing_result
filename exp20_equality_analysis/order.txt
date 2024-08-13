@@ -1,0 +1,4 @@
+copy_csv_files.y	op: csv_files/
+in merged_csv.csv manually change the config to cmp, laf, cmp_laf, nil
+copy merged_csv.csv as merged_csv_updated.csv and manually delete the unnecessary columns
+plot.py		op: branch_coverage_plot.png
