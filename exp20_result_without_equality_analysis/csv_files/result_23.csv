@@ -1,0 +1,11 @@
+program_name,config,line_coverage,line_covered,total_lines,function_coverage,function_covered,total_functions,branch_coverage,error_cover,time_difference,num_queue_files,num_crash_files
+/home/administrator/Desktop/exp20_without_equality/cfiles32/bitvector/soft_float_1-2.c.cil.c,c2,69.9,121,173,71.4,5,7,69.23%,UNKNOWN,-1,222,-1
+/home/administrator/Desktop/exp20_without_equality/cfiles32/bitvector/soft_float_1-2.c.cil.c,c51,69.9,121,173,71.4,5,7,69.23%,UNKNOWN,-1,240,-1
+/home/administrator/Desktop/exp20_without_equality/cfiles32/bitvector/soft_float_4-1.c.cil.c,c2,63.8,81,127,66.7,4,6,59.09%,UNKNOWN,-1,204,-1
+/home/administrator/Desktop/exp20_without_equality/cfiles32/bitvector/soft_float_4-1.c.cil.c,c51,63.8,81,127,66.7,4,6,59.09%,UNKNOWN,-1,239,-1
+/home/administrator/Desktop/exp20_without_equality/cfiles32/bitvector/soft_float_5a.c.cil.c,c2,69.7,92,132,66.7,4,6,66.0%,UNKNOWN,-1,229,-1
+/home/administrator/Desktop/exp20_without_equality/cfiles32/bitvector/soft_float_5a.c.cil.c,c51,69.7,92,132,66.7,4,6,66.0%,UNKNOWN,-1,227,-1
+/home/administrator/Desktop/exp20_without_equality/cfiles32/combinations/gcd_1+newton_1_2.i,c2,92.1,35,38,88.9,8,9,75.0%,UNKNOWN,-1,5,-1
+/home/administrator/Desktop/exp20_without_equality/cfiles32/combinations/gcd_1+newton_1_2.i,c51,92.1,35,38,88.9,8,9,75.0%,UNKNOWN,-1,25,-1
+/home/administrator/Desktop/exp20_without_equality/cfiles32/combinations/gcd_1+newton_1_4.i,c2,92.1,35,38,88.9,8,9,43.75%,TRUE,203.6599943637848,5,1
+/home/administrator/Desktop/exp20_without_equality/cfiles32/combinations/gcd_1+newton_1_4.i,c51,92.1,35,38,88.9,8,9,81.25%,TRUE,672.6199808120728,25,1

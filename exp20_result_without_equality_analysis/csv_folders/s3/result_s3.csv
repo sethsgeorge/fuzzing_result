@@ -1,0 +1,9 @@
+program_name,config,line_coverage,line_covered,total_lines,function_coverage,function_covered,total_functions,branch_coverage,error_cover,time_difference,num_queue_files,num_crash_files
+/home/administrator/Desktop/exp20_without_equality/cfiles32/loop-invariants/linear-inequality-inv-a.c,c2,73.7,14,19,50.0,1,2,75.0%,UNKNOWN,-1,11,-1
+/home/administrator/Desktop/exp20_without_equality/cfiles32/loop-invariants/linear-inequality-inv-a.c,c51,73.7,14,19,50.0,1,2,75.0%,UNKNOWN,-1,12,-1
+/home/administrator/Desktop/exp20_without_equality/cfiles32/loop-invgen/fragtest_simple.i,c2,80.0,24,30,50.0,2,4,66.67%,UNKNOWN,-1,23,-1
+/home/administrator/Desktop/exp20_without_equality/cfiles32/loop-invgen/fragtest_simple.i,c51,83.3,25,30,50.0,2,4,73.33%,UNKNOWN,-1,154,-1
+/home/administrator/Desktop/exp20_without_equality/cfiles32/loop-invgen/nest-if3.i,c2,73.7,14,19,50.0,2,4,64.71%,UNKNOWN,-1,87,-1
+/home/administrator/Desktop/exp20_without_equality/cfiles32/loop-invgen/nest-if3.i,c51,73.7,14,19,50.0,2,4,76.47%,UNKNOWN,-1,350,-1
+/home/administrator/Desktop/exp20_without_equality/cfiles32/loop-lit/hhk2008.i,c2,20.0,4,20,25.0,1,4,9.09%,UNKNOWN,-1,1,-1
+/home/administrator/Desktop/exp20_without_equality/cfiles32/loop-lit/hhk2008.i,c51,75.0,15,20,50.0,2,4,63.64%,UNKNOWN,-1,29,-1

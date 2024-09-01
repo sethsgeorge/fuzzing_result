@@ -1,0 +1,16 @@
+program_name,line_coverage,line_covered,total_lines,function_coverage,function_covered,total_functions,branch_coverage,time_difference,num_queue_files,num_crash_files
+/home/administrator/Desktop/exp500_GA/cfiles32/combinations/pals_lcr.7.1.ufo.BOUNDED-14.pals+Problem12_label04.c,91.9,3925,4270,31.6,6,19,79.03%,-1,1250,-1
+/home/administrator/Desktop/exp500_GA/cfiles32/combinations/pals_lcr.7.1.ufo.BOUNDED-14.pals+Problem12_label05.c,92.1,3932,4270,31.6,6,19,79.03%,-1,1248,-1
+/home/administrator/Desktop/exp500_GA/cfiles32/combinations/pals_lcr.7.1.ufo.BOUNDED-14.pals+Problem12_label09.c,92.1,3932,4270,31.6,6,19,79.03%,-1,1284,-1
+/home/administrator/Desktop/exp500_GA/cfiles32/combinations/pals_lcr.7.1.ufo.UNBOUNDED.pals+Problem12_label02.c,92.0,3928,4269,31.6,6,19,78.75%,-1,1214,-1
+/home/administrator/Desktop/exp500_GA/cfiles32/combinations/pals_lcr.7.1.ufo.UNBOUNDED.pals+Problem12_label04.c,92.1,3933,4269,31.6,6,19,79.15%,-1,1250,-1
+/home/administrator/Desktop/exp500_GA/cfiles32/combinations/pals_lcr.7.1.ufo.UNBOUNDED.pals+Problem12_label05.c,92.2,3934,4269,31.6,6,19,79.15%,-1,1272,-1
+/home/administrator/Desktop/exp500_GA/cfiles32/combinations/pals_lcr.7.1.ufo.UNBOUNDED.pals+Problem12_label09.c,92.0,3929,4269,31.6,6,19,79.05%,-1,1252,-1
+/home/administrator/Desktop/exp500_GA/cfiles32/combinations/pals_lcr.7.ufo.BOUNDED-14.pals+Problem12_label00.c,91.9,3923,4269,31.6,6,19,78.93%,169.42799830436707,1264,3
+/home/administrator/Desktop/exp500_GA/cfiles32/combinations/pals_lcr.7.ufo.BOUNDED-14.pals+Problem12_label01.c,92.2,3934,4269,31.6,6,19,79.23%,-1,1232,-1
+/home/administrator/Desktop/exp500_GA/cfiles32/combinations/pals_lcr.7.ufo.BOUNDED-14.pals+Problem12_label02.c,92.0,3928,4269,31.6,6,19,78.83%,-1,1245,-1
+/home/administrator/Desktop/exp500_GA/cfiles32/combinations/pals_lcr.7.ufo.BOUNDED-14.pals+Problem12_label03.c,92.1,3932,4269,31.6,6,19,79.13%,337.8519968986511,1235,1
+/home/administrator/Desktop/exp500_GA/cfiles32/combinations/Problem05_label43+token_ring.13.cil-1.c,48.2,5494,11409,96.3,52,54,41.75%,85.01199913024902,968,1
+/home/administrator/Desktop/exp500_GA/cfiles32/combinations/Problem05_label45+token_ring.09.cil-1.c,47.2,5289,11196,95.7,44,46,39.35%,-1,1020,-1
+/home/administrator/Desktop/exp500_GA/cfiles32/combinations/Problem05_label49+token_ring.02.cil-2.c,49.1,5323,10837,93.8,30,32,39.63%,62.667999267578125,1185,1
+/home/administrator/Desktop/exp500_GA/cfiles32/combinations/Problem05_label49+token_ring.06.cil-1.c,47.0,5193,11045,95.0,38,40,39.01%,90.20799899101257,1001,1
