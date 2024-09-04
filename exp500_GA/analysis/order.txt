@@ -1,0 +1,11 @@
+check_if_all_files_have_173_rows.py
+remove_directories_from_program_name.py
+copy_csv_files.py
+calculate_avg.py
+combine_column_csv.py
+label_dataset.py
+perform feature extraction
+create_dataset_with_features.py
+at_least_one_zero.py
+rows_with_all_one.py	
+go to ../create_classifier/
