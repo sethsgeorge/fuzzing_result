@@ -5,7 +5,7 @@ df = pd.read_csv('branch_coverage_columns_combined.csv')
 
 # Iterate through each row
 for index, row in df.iterrows():
-    # Find the maximum value from c1 to c19
+    # Find the maximum value from c1 to c8
     max_value = row[1:].max()
     
     # Replace all values in the row with 1 where the maximum value occurs, and 0 otherwise
